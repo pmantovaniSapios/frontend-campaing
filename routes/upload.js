@@ -10,9 +10,9 @@ router.post('/upload', upload.single("file"), async function(req, res, next) {
   let retorno = await csvToJson("./storage/" + req.file.filename);
 
   if (retorno == true) {
-    res.redirect(200, "https://connector.sapios.com.br/sc/");
+    res.render("upload");
   } else {
-    res.redirect(200, "https://connector.sapios.com.br/sc/");
+    res.render("upload");
   }
 
 });
