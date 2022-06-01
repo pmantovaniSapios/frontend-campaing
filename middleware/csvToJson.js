@@ -89,7 +89,7 @@ async function csvToJson(filepath) {
       console.log("end");
 
       axios({
-        url: "https://697c-2804-14c-1ad-253f-a1ea-2a7d-8bbf-3878.sa.ngrok.io/datafromcsv",
+        url: "https://connector.sapios.com.br/hap/datafromcsv",
         method: "post",
         data: csvData,
       })
