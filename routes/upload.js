@@ -10,9 +10,9 @@ router.post('/upload', upload.single("file"), async function(req, res, next) {
   let retorno = await csvToJson("./storage/" + req.file.filename);
 
   if (retorno == true) {
-    res.render("upload", { title: "Upload - Campanha Sapios" });
+    res.redirect("/sc/upload", { title: "Upload - Campanha Sapios" });
   } else {
-    res.render("upload", { title: "" });
+    res.redirect("/sc/upload", { title: "" });
   }
 
 });
