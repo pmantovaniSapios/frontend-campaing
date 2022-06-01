@@ -7,7 +7,7 @@ const csvToJson = require('../middleware/csvToJson');
 router.post('/upload', upload.single("file"), async function(req, res, next) {
 
   // console.log("./storage/" + req.file.filename);
-  let retorno = await csvToJson("./storage/" + req.file.filename);
+  let retorno = await csvToJson(req.file.filename);
 
   if (retorno == true) {
     res.render("upload");
